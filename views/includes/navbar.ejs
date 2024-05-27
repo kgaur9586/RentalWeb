@@ -1,0 +1,75 @@
+<nav class="nav-box">
+    <div id="nav-main">
+      <div class="mt-4 mb-4 nav-main-bar">
+        <div class="nav-icon">
+          <a class="navbar-brand" href="/listings">
+            <i class="fa-brands fa-airbnb airbnb logo"></i>
+          </a>
+          <span class="airbnb">airbnb</span>
+        </div>
+  
+        <div class=" search-res col-5 ">
+
+          <form class="d-flex search" role="search" action="/listings/search" method="get">
+            <label for="search" class="form-lable  search-label"></label>
+              <button class="circle" type="submit">
+                <i class="fa-solid fa-magnifying-glass glass"></i>
+              </button>
+            <input class="form-control  search-bar" type="search" name="find" placeholder="Search destination" aria-label="Search" />
+        
+          </form>
+
+        </div>
+    
+  
+
+    <div class="user">
+        <div class="dropstart">
+          <div
+          class="dropstart-toggle big-btn mt-3"
+           role="button" 
+          data-bs-toggle="dropdown"
+         >
+           <i class="fa-solid fa-bars"></i>&nbsp;&nbsp;
+           <div class="user-circle"><i class="fa-solid fa-user"></i></div>
+          </div>
+
+      
+ 
+            <ul class="dropdown-menu drop-bar">
+              <li>
+                <a class="dropdown-item underline" href="/listings/new"
+                  >Add New Listings</a
+                >
+              </li>
+              <br />
+              <% if(!currUser){ %>
+              <li>
+                <a class="dropdown-item underline" href="/signUp ">SignUp</a>
+              </li>
+              <br />
+              <li>
+                <a class="dropdown-item underline" href="/login ">LogIn</a>
+              </li>
+              <% } %>
+              <br />
+              <% if(currUser) {%>
+              <li>
+                <a class="dropdown-item underline" href="/logout">LogOut</a>
+              </li>
+              <% } %>
+            </ul>
+        </div>
+     </div>      
+      </div>
+    </div>
+  </nav>
+  
+
+
+
+         
+          
+          
+        
+   
