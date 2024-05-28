@@ -103,6 +103,17 @@ text-decoration: underline;
     .airbnb{
         font-size: 40px;
     }
+
+    /* @media (max-width:600px){
+
+        .circle{
+            margin-left: 12rem;
+            margin-top: 9.3rem;
+             width:35px;
+            height: 34px;
+    
+        }
+     */
 }
 
 
