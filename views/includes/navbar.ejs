@@ -8,21 +8,14 @@
           <span class="airbnb">airbnb</span>
         </div>
   
-        <div class=" search-res col-5 ">
-
-          <form class="d-flex search" role="search" action="/listings/search" method="get">
-            <label for="search" class="form-lable  search-label"></label>
-              <button class="circle" type="submit">
-                <i class="fa-solid fa-magnifying-glass glass"></i>
-              </button>
-            <input class="form-control  search-bar" type="search" name="find" placeholder="Search destination" aria-label="Search" />
-        
+        <div class="nav-search nav-hover nav-search-search">
+          <form class="d-flex needs-validation" role="search" action="/listings/search" method="get" id="searchBox">
+            <input type="search" placeholder="Search" aria-label="Search" name="q" id="mySearchInput">
+            <button type="submit" id="search"><i class="fa-solid fa-magnifying-glass"></i></i></button>
           </form>
-
         </div>
     
   
-
     <div class="user">
         <div class="dropstart">
           <div
@@ -60,7 +53,18 @@
               <% } %>
             </ul>
         </div>
-     </div>      
+     </div>  
+     
+     <div id="nav-search-hide">
+      <div class="nav-search nav-hover">
+        <form class="d-flex needs-validation" role="search" action="/listings/search" method="get" id="searchBox">
+          <input type="search" placeholder="Search" aria-label="Search" name="q" id="mySearchInput">
+          <button type="submit" id="search"><i class="fa-solid fa-magnifying-glass"></i></i></button>
+        </form>
+      </div>
+    </div>
+    
+     
       </div>
     </div>
   </nav>
