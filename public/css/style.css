@@ -29,6 +29,7 @@ min-height: 100vh;
 .listing-card{
     border: none !important;
     margin-bottom: 2.8rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     
 }
 .card-img-top{
@@ -36,6 +37,7 @@ min-height: 100vh;
     width: 100% !important;
     object-fit: cover !important;
 }
+
 .listing-link{
     text-decoration: none;
 }
@@ -96,6 +98,9 @@ min-height: 100vh;
     cursor: pointer;
 }
 
+.listing-card:hover{
+  transform:scale(1.01);
+}
 
 #map{
     height: 400px;

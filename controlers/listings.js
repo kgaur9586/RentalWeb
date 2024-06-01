@@ -199,7 +199,7 @@ module.exports.filter = async (req, res, next) => {
             res.locals.success = `Listings found for category: ${id}`;
             res.render("listings/index.ejs", { allListen });
         } else {
-            req.flash("error", `No listings found for category: ${id}`);
+            req.flash("error", `No listings found for category`);
             res.redirect("/listings");
         }
     } catch (error) {

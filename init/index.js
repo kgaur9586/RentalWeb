@@ -1,11 +1,13 @@
-
+if(process.env.NODE_ENV != "production"){
+	require('dotenv').config();
+	}
 const mongoose = require("mongoose");
 const initData = require("./data.js");
 
 const Listing = require("../models/listening.js");
 
-let mongo_url = "mongodb://127.0.0.1:27017/wanderlust";
-// const DB_URL = process.env.ATLASDB_URL;
+// let mongo_url = "mongodb://127.0.0.1:27017/wanderlust";
+const DB_URL =process.env.ATLASDB_URL;
 
 main().then(()=>{
     console.log("connection to DB");
@@ -15,7 +17,7 @@ main().then(()=>{
 })
 
 async function main(){
-    await mongoose.connect(mongo_url);
+    await mongoose.connect(DB_URL);
 }
 
 let categoryAll = [
