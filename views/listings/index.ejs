@@ -2,14 +2,13 @@
 <body>
  
 <style>
-
 #filter{
 display: flex;
 align-items: center;
 gap: 1rem;
 }
 
-.filter a{
+.items-container a{
 text-decoration: none;
 color: black;
 }
@@ -18,10 +17,13 @@ color: black;
     text-align: center;
     margin-right: 2rem;
     opacity: 0.7;
+    transition: transform 0.3s ease; 
 }
 
 .filter:hover{
     opacity: 1;
+    transform: scale(1.2);
+    text-decoration: underline;
 }
 
 .scrollable-container {
@@ -48,6 +50,8 @@ color: black;
     display: inline-block;
     padding: 10px;
 }
+
+
 .two-btn{
     display: flex;
     flex-direction: row;
@@ -57,7 +61,6 @@ color: black;
 }
 
 .tag-toogle{
-
     border: 1px solid rgb(117, 117, 117);
     border-radius: 9px;
     font-size: 15px;
@@ -125,8 +128,6 @@ background-color: azure;
     .up{
        font-size: 12px;
     }
-   
-    
 }
 </style>
 
@@ -136,78 +137,86 @@ background-color: azure;
     <div class="scrollable-container">
         <div class="items-container">
             <!-- Filter items here -->
-            <div class="filter">
-                <a href="/listings/filter/Castles">
+
+            <a href="/listings/filter/Trending">
+            <div class="filter  Trending">
                  <i class="fa-solid fa-fire"></i>
                  <p>Trending</p> 
-               </a>
             </div>
+            </a>
             
-                <div class="filter">
-                 <a href="/listings/filter/Castles">
+
+            <a href="/listings/filter/Beech">
+                <div class="filter  Beech">
                    <i class="fa-solid fa-umbrella-beach"></i>
                    <p>Beech</p>
-               </a>
             </div>
+            </a>
 
-            <div class="filter">
-                <a href="/listings/filter/Castles">
+            <a href="/listings/filter/Design">
+            <div class="filter  Design">
                       <i class="fa-solid fa-tree"></i>
-                    <p>Tree houses</p>
-                </a>
+                    <p>Design</p>
              </div>
+            </a>
              
-             
-                <div class="filter">
-                <a href="/listings/filter/Castles">
+             <a href="/listings/filter/Tiny Homes">
+                <div class="filter  Tiny-Homes">
                     <i class="fa-solid fa-house"></i> 
-                    <p>Tiny homes</p>
-                </a>
+                    <p>Tiny Homes</p>
              </div>
-             <div class="filter">
-                <a href="/listings/filter/Castles">
+            </a>
+
+             <a href="/listings/filter/Farms">
+             <div class="filter  Farms">
                     <i class="fa-solid fa-tractor"></i>
                     <p>Farms</p>
-                </a>
              </div>
+            </a>
              
-             <div class="filter">
-                <a href="/listings/filter/Castles">
+             <a href="/listings/filter/Beachfront">
+             <div class="filter Beachfront">
                   <i class="fa-solid fa-umbrella-beach"></i>
                   <p>Beech</p>
-              </a>
              </div>
+            </a>
              
-             
-              <div class="filter">
-              <a href="/listings/filter/Castles">
+             <a href="/listings/filter/Treehouse">
+              <div class="filter  Treehouse">
                     <i class="fa-solid fa-tree"></i>
                   <p>Tree houses</p>
-              </a>
              </div>
+            </a>
              
-             
-                <div class="filter">
-                <a href="/listings/filter/Castles">
+             <a href="/listings/filter/Earth Homes">
+                <div class="filter Earth-Homes">
                     <i class="fa-solid fa-earth-americas"></i>
-                    <p>Earth homes</p>
-                </a>
+                    <p>Earth Homes</p>
              </div>
-             
-   <div class="filter">
-    <a href="/listings/filter/Castles">
+            </a>
+
+<a href="/listings/filter/Amazing Pools">          
+   <div class="filter Amazing-Pools">
         <i class="fa-solid fa-igloo"></i>
         <p>Caves</p>
-    </a>
  </div>
- 
-    
-    <div class="filter">
-    <a href="/listings/filter/Castles">
+</a>
+
+<a href="/listings/filter/Lake">
+    <div class="filter Lake">
         <i class="fa-solid fa-water"></i>
         <p>Lake</p>
-    </a>
  </div>
+</a>
+
+
+<a href="/listings/filter/All">
+ <div class="filter All">
+     <i class="fa-solid fa-fire"></i>
+     <p>All</p> 
+</div>
+</a>
+
         </div>
     </div>
     <button class="scroll-button right"><i class="fa-solid fa-chevron-right"></i></button>
@@ -233,7 +242,7 @@ background-color: azure;
 <div class=" row   row-cols-lg-3   row-cols-md-2   row-cols-sm-1">
     <% for(let listing of allListen){%>
         <a href="/listings/<%= listing._id %>" class="listing-link">
-    <div class="card col  listing-card">
+        <div class="card col  listing-card">
         <img src="<%= listing.image.url %>" class="card-img-top  main-img" alt="Listing_img"  
          style="height: 20rem;">
 
@@ -241,7 +250,7 @@ background-color: azure;
          
 <div class="  card-design card-img-overlay"><i class="fa-regular fa-heart  heart"></i></div>
         <div class="card-body">
-          <p class="card-text"> <b><%= listing.title %></b>
+          <p class="card-text"><b><%= listing.title %></b>
         <br>
         &#8377;<%= listing.price.toLocaleString("en-IN") %>/night
         <i class="gst-info"> &nbsp; &nbsp; +18% GST</i>
@@ -252,9 +261,7 @@ background-color: azure;
       <% } %> 
      
 </div>
-   
     
-
 
 <script>
 let taxSwitch = document.getElementById("flexSwitchCheckDefault");
@@ -287,9 +294,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
 </script>
 
+<script src="filter.js"></script>
 </body>
 
 

@@ -109,7 +109,7 @@ let filename = req.file.filename;
     }
 
     module.exports.search = async (req, res) => {
-        console.log(req.query.find);
+        // console.log(req.query.find);
         let input = req.query.find.trim().replace(/\s+/g, " "); // remove start and end space and middle space remove and middle add one space------
         console.log(input);
         if (input == "" || input == " ") {
@@ -188,16 +188,25 @@ let filename = req.file.filename;
             res.redirect("/listings");
         }
     };
-    
-    module.exports.filter = async (req, res, next) => {
-        let { id } = req.params;
-        let allListen = await Listing.find({ category: { $all: [id] } });
-        console.log(allListen);
-        if (allListen.length != 0) {
-            res.locals.success = `Listings Find by ${id}`;
-            res.render("listings/index.ejs", { allListen});
+  
+module.exports.filter = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        // Find all listings where the category array contains the given category
+        const allListen = await Listing.find({ category: { $in: [id] } });
+        
+        if (allListen.length !== 0) {
+            res.locals.success = `Listings found for category: ${id}`;
+            res.render("listings/index.ejs", { allListen });
         } else {
-            req.flash("error", "Listings is not here !!!");
+            req.flash("error", `No listings found for category: ${id}`);
             res.redirect("/listings");
         }
-    };
+    } catch (error) {
+        console.error("Error filtering listings by category:", error);
+        req.flash("error", "An error occurred while filtering listings.");
+        res.redirect("/listings");
+    }
+};
+  
+

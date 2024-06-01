@@ -1,18 +1,15 @@
-.nav-main-bar{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 5.5rem;
-        /* width: 100vw; */
-        padding: 0px 20px;
-  }
-.nav-main {
+
+.nav-box {
+    height: 5.5rem;
+}
+
+#nav-main {
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
     height: 5.5rem;
-    /* width: 100vw; */
+    width: 100vw;
     background-color: white;
     border-bottom: .5px solid rgba(128, 128, 128, 0.503);
     position: fixed;
@@ -20,25 +17,20 @@
     z-index: 120;
 }
 
-.d-flex{
-    display: flex !important;
-    flex-wrap: nowrap;
-}
-
-
-.container-fluid{
+#nav-main-bar {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.5rem;
+    width: 100vw;
+    padding: 0px 20px;
 }
 
-
-.airbnb{
-    color:#f34949;
-}
-
-
-.glass{
-    color: white;
-    font-size: 18px;
+.name-nav{
+text-align: center;
+font-size: 25px;
+font-weight: 500;
+color: tomato;
 }
 
 
@@ -53,6 +45,9 @@
     align-items: center;
     border-radius: 12px;
 }
+.user{
+    padding-right: 15px;
+}
 
 .drop-bar{
    width:250px;
@@ -60,32 +55,6 @@
     margin-left: 0;
     box-shadow: 2px 3px 4px black;
 }
-
-
-.underline:hover{
-text-decoration: underline;
-}
-
-
-@media (max-width:768px){
-    
-    .user{
-        margin-top: 1rem;
-        /* margin-left: 2rem; */
-    }
-
-    .nav-icon{
-        width: 70px;
-        height: 45px;
-    }
-    
-
-    .airbnb{
-        font-size: 40px;
-    }
-}
-
-
 
 .nav-search {
     height: 3rem;
@@ -100,6 +69,7 @@ text-decoration: underline;
     padding-right: 5px;
 
 }
+
 .nav-hover {
     box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.800);
 }
@@ -126,12 +96,13 @@ text-decoration: underline;
     font-size: .9rem;
     color: white;
 }
+
 #mySearchInput {
     margin-right: 10px;
     height: 2.5rem;
     width: 15rem;
     background-color: transparent;
-    color: green;
+    color: rgb(40, 55, 40);
 }
 
 #mySearchInput::-webkit-search-cancel-button {
@@ -139,43 +110,37 @@ text-decoration: underline;
 }
 
 #mySearchInput::-webkit-input-placeholder {
-    color: green;
+    color: rgb(40, 62, 40);
     font-size: 1.1rem;
     padding-left: 50px;
 }
+
 #nav-search-hide {
     display: none;
 }
 
 @media (max-width: 767px) {
+    .nav-search-search{
+        display: none !important;
+    }
 
     #nav-search-hide {
         display: flex !important;
-    }
-
-    .nav-main,
-    .nav-box {
-        height: 13rem !important;
-    }
-}
-  
-@media (max-width: 767px) {
-    .nav-search-search {
-        display: none !important; /* Hide the original search bar */
-    }
-
-    #nav-search-hide {
-        display: flex !important; /* Show the alternative search bar */
         position: absolute;
-        margin-left: 2rem;
-        margin-top: 13rem;
-        width: auto;
+        top: 105px;
+      padding-left: 30px;
     }
 
-    /* Adjust other styles as needed for smaller screens */
+    #nav-main,
+    .nav-box {
+        height: 11rem !important;
+        
+    }
+
+    #nav-main-bar {
+        height: 4.5rem;
+    }
 }
-
-
 
   
 
