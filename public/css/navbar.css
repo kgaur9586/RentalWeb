@@ -59,7 +59,7 @@ color: tomato;
 .nav-search {
     height: 3rem;
     min-width: 18rem;
-    background-color: rgb(255, 255, 255);
+    background-color:white;
     padding: 5px 0px;
     border-radius: 50px;
     border: .5px solid rgba(128, 128, 128, 0.503);
@@ -71,11 +71,11 @@ color: tomato;
 }
 
 .nav-hover {
-    box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.800);
+    box-shadow: inset 0px 1.4px 3px rgba(0, 0, 0, 0.800);
 }
 
 .nav-hover:active {
-    box-shadow: inset 0px 6px 5px rgba(0, 0, 0, 0.700);
+    box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.700);
 }
 
 #mySearchInput,

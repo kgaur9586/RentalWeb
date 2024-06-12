@@ -146,17 +146,10 @@ background-color: azure;
             </a>
             
 
-            <a href="/listings/filter/Beachfront">
-                <div class="filter  Beachfront">
-                   <i class="fa-solid fa-umbrella-beach"></i>
-                   <p>Beech</p>
-            </div>
-            </a>
-
-            <a href="/listings/filter/Design">
-            <div class="filter  Design">
-                      <i class="fa-solid fa-tree"></i>
-                    <p>Design</p>
+            <a href="/listings/filter/Camping">
+            <div class="filter  Camping">
+                <i class="fa-solid fa-campground"></i>
+                    <p>Camping</p>
              </div>
             </a>
              
@@ -195,28 +188,34 @@ background-color: azure;
              </div>
             </a>
 
-<a href="/listings/filter/Amazing Pools">          
-   <div class="filter Amazing-Pools">
-        <i class="fa-solid fa-igloo"></i>
-        <p>Caves</p>
- </div>
-</a>
 
-<a href="/listings/filter/Lake">
-    <div class="filter Lake">
-        <i class="fa-solid fa-water"></i>
-        <p>Lake</p>
- </div>
-</a>
+            <a href="/listings/filter/Beachfront">
+                <div class="filter  Beachfront">
+                   <i class="fa-solid fa-umbrella-beach"></i>
+                   <p>Beech</p>
+            </div>
+            </a>
 
+                <a href="/listings/filter/Caves">          
+                  <div class="filter Caves">
+                    <i class="fa-solid fa-igloo"></i>
+                     <p>Caves</p>
+                     </div>
+                </a>
+                 
+                <a href="/listings/filter/Lake">
+                    <div class="filter Lake">
+                        <i class="fa-solid fa-water"></i>
+                        <p>Lake</p>
+                 </div>
+                </a>
 
-<a href="/listings/filter/All">
- <div class="filter All">
-     <i class="fa-solid fa-fire"></i>
-     <p>All</p> 
-</div>
-</a>
-
+                <a href="/listings">
+                    <div class="filter All">
+                        <i class="fa-solid fa-house-flag"></i>
+                        <p>All</p> 
+                   </div>
+                   </a>
         </div>
     </div>
     <button class="scroll-button right"><i class="fa-solid fa-chevron-right"></i></button>
@@ -246,8 +245,7 @@ background-color: azure;
         <img src="<%= listing.image.url %>" class="card-img-top  main-img" alt="Listing_img"  
          style="height: 20rem;">
 
-         
-         
+             
 <div class="  card-design card-img-overlay"><i class="fa-regular fa-heart  heart"></i></div>
         <div class="card-body">
           <p class="card-text"><b><%= listing.title %></b>
@@ -258,8 +256,7 @@ background-color: azure;
         </div>
       </div>
        </a>
-      <% } %> 
-     
+     <% } %>  
 </div>
     
 
@@ -293,7 +290,6 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollableContainer.scrollBy(50, 0); // Scroll right by 50 pixels
     });
 });
-
 </script>
 
 <script src="filter.js"></script>

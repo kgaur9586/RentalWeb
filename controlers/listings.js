@@ -189,24 +189,25 @@ let filename = req.file.filename;
         }
     };
   
-module.exports.filter = async (req, res, next) => {
-    try {
-        const { id } = req.params;
-        // Find all listings where the category array contains the given category
-        const allListen = await Listing.find({ category: { $in: [id] } });
-        
-        if (allListen.length !== 0) {
-            res.locals.success = `Listings found for category: ${id}`;
-            res.render("listings/index.ejs", { allListen });
-        } else {
-            req.flash("error", `No listings found for category`);
+    module.exports.filter = async (req, res, next) => {
+        try {
+            const { id } = req.params;
+            // Find all listings where the category array contains the given category
+            const allListen = await Listing.find({ category: { $all: [id] } });
+            
+            if (allListen.length > 0) {
+                res.locals.success = `Listings found for category: ${id}`;
+                res.render("listings/index", { allListen }); // Removed .ejs extension
+            } else {
+                req.flash("error", "No listings found");
+                res.redirect("/listings");
+            }
+        } catch (error) {
+            console.error("Error filtering listings by category:", error);
+            req.flash("error", "An error occurred while filtering listings.");
             res.redirect("/listings");
         }
-    } catch (error) {
-        console.error("Error filtering listings by category:", error);
-        req.flash("error", "An error occurred while filtering listings.");
-        res.redirect("/listings");
-    }
-};
+    };
+    
   
 

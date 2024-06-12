@@ -98,9 +98,6 @@ min-height: 100vh;
     cursor: pointer;
 }
 
-.listing-card:hover{
-  transform:scale(1.01);
-}
 
 #map{
     height: 400px;
