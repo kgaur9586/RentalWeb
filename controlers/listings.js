@@ -192,14 +192,20 @@ let filename = req.file.filename;
     module.exports.filter = async (req, res, next) => {
         try {
             const { id } = req.params;
+    
+            if (!id) {
+                req.flash("error", "Category ID is required.");
+                return res.redirect("/listings");
+            }
+    
             // Find all listings where the category array contains the given category
             const allListen = await Listing.find({ category: { $all: [id] } });
-            
+    
             if (allListen.length > 0) {
                 res.locals.success = `Listings found for category: ${id}`;
                 res.render("listings/index", { allListen }); // Removed .ejs extension
             } else {
-                req.flash("error", "No listings found");
+                req.flash("error", `No listings found`);
                 res.redirect("/listings");
             }
         } catch (error) {
@@ -208,6 +214,7 @@ let filename = req.file.filename;
             res.redirect("/listings");
         }
     };
+    
     
   
 
