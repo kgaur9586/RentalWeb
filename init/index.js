@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const initData = require("./data.js");
 
 const Listing = require("../models/listening.js");
-const dbUrl = process.env.ATLAS_Url;
+const dbUrl = 'mongodb+srv://123princegaur9586:vJ7DyktOSFFG21ri@wanderlust.u8mv9bx.mongodb.net/?retryWrites=true&w=majority&appName=WanderLust';
 
 main().then(()=>{
     console.log("connection to DB");
@@ -35,7 +35,7 @@ let categoryAll = [
 
 const initDB = async ()=>{
     await Listing.deleteMany({});
-    initData.data = initData.data.map((obj) =>({...obj,  owner: "661041fa689680fc8f6c5202"}));
+    initData.data = initData.data.map((obj) =>({...obj,  owner: "6680e5dfd4b86f40f367392c"}));
     category: [
         `${categoryAll[Math.floor(Math.random() * categoryAll.length)]}`,
         `${categoryAll[Math.floor(Math.random() * categoryAll.length)]}`,
